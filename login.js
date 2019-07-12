@@ -13,14 +13,15 @@
 
 //Users refer
 //var usersRef = firebase.database().ref('users');
-
+var provider = new firebase.auth.GoogleAuthProvider();
 const emailField = document.getElementById('emailField');
 const passwordField = document.getElementById('passwordField');
-//const registerEmail = document.getElementById('emailRegister');
-//const registerPass = document.getElementById('passwordRegister');
+const registerEmail = document.getElementById('emailRegister');
+const registerPass = document.getElementById('passwordRegister');
 const loginButton = document.getElementById('loginButton');
 const registerButton = document.getElementById('registerButton');
 const logoutButton = document.getElementById('logoutButton');
+const submitButton = document.getElementById('submitButton');
 
 /*	
 function login(email, password){
@@ -43,16 +44,18 @@ function login(email, password){
 		promise.catch(e => console.log(e.message));
 	});
 
-	registerButton.addEventListener('click', e => {
-		const email = emailField.value;
-		const pass = passwordField.value;
+	submitButton.addEventListener('click', e => {
+		const email = registerEmail.value;
+		const pass = registerPass.value;
 		const auth = firebase.auth();
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
 	});
 
 	logoutButton.addEventListener('click', e => {
-		firebase.auth.signOut();
+		firebase.auth().signOut().then(function() {
+		}).catch(function(error) {
+		});
 	});
 
 	firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -78,7 +81,7 @@ function login(email, password){
 		closeForm();
 		alert("Cadastro efetuado com sucesso!");
 	}
-
+*/
 	function openForm() {
 		document.getElementById("registerPopup").style.display = "block";
 	}
@@ -86,4 +89,3 @@ function login(email, password){
 	function closeForm() {
 		document.getElementById("registerPopup").style.display = "none";
 	}
-*/	

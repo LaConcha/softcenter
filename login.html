@@ -20,14 +20,32 @@
 			</ul>
 			<!-- botões de login e cadastro do formulario principal -->
 			<button id="loginButton" class="login">Login</button>
-			<button id="registerButton" class="register">Register</button>
+			<button id="registerButton" class="register" onclick="openForm()">Register</button>
 			<button id="logoutButton" class="hide">Logout</button>
 		</form>
 	</div>
 
+		<!-- Criação do popup com campos para registro -->
+		<div class="Frame" id="registerPopup" style="display: none">
+			<div>
+				<h1>Register form</h1>
+			</div>
+			<form name="registerForm">
+				<ul class="input">	
+					<label>Email</label>
+					<input type="Email" id="emailRegister" required="true">
+					<label>Password</label>
+					<input type="password" id="passwordRegister" required="true">
+				</ul>
+			<!-- Criação dos botões no formulario de cadastro -->
+				<button id="cancel" class="cancelRegister" onclick="closeForm()">Cancel</button>
+				<button id="submitButton" class="registerSubmit">Submit</button>
+			</form>		
+		</div>
+
 	<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
-	<!-- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script> -->
-	<script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
 	<script src="login.js"></script>
 </body>
 </html>
